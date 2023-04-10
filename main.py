@@ -15,12 +15,13 @@ def start_screen(stdscr):
     # Evaluates the center of of the console so you can use it as an argument.
     rPos = rowPos(stdscr, step=2)
     
-    WelcomeTxt = "Welcome to the Speed Typing Test"
-    
+    dialogue = { 'welcomeTxt' : "Welcome to the Speed Typing Test", 'toStart' : "Press any key to Begin"}
+
+
     stdscr.clear # Ensures blank slate
     
-    stdscr.addstr(0, rPos - len(WelcomeTxt) // 2, WelcomeTxt) # (row [up|down], col [left|righ], string output, color)
-    stdscr.addstr("\nPress any key to begin!")
+    stdscr.addstr(0, rPos - len(dialogue['welcomeTxt']) // 2, dialogue['welcomeTxt']) # (row [up|down], col [left|right], string output, color)
+    stdscr.addstr("\n" + dialogue['toStart'])
     stdscr.refresh()
     stdscr.getkey()
 
