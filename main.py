@@ -35,9 +35,19 @@ def start_screen(stdscr):
     stdscr.refresh()
     stdscr.getkey()
 
+def wpm_test(stdscr):
+    target_text = "Hello world this is string I included for this example withing the applications." # Example string 
+    current_text = [] # The user stored input.
+
+    stdscr.clear()
+    stdscr.addstr(target_text)
+    stdscr.refresh()
+    stdscr.getkey()
+
 # our main
 def main(stdscr):
     
     start_screen(stdscr)
+    wpm_test(stdscr)
 
 wrapper(main)
